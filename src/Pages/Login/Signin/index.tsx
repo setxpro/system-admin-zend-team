@@ -14,7 +14,6 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "../../../Contexts/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 function Copyright(props: any) {
   return (

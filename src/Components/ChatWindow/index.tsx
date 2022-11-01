@@ -26,7 +26,7 @@ const ChatWindow = () => {
       );
       setChatBetween(data);
     })();
-  }, []);
+  }, [idTest, id]);
 
   return (
     <C.Container>

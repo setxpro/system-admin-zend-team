@@ -3,7 +3,6 @@ import { ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ChatIntro from "../../Components/ChatIntro";
 import ChatListItem from "../../Components/ChatListItem";
-import ChatWindow from "../../Components/ChatWindow";
 
 import * as C from "./styles";
 
@@ -28,7 +27,7 @@ const Chat = ({ children }: { children: ReactNode }) => {
       setChatList(data);
       setActiveChat({ _id: data[0]._id });
     })();
-  }, []);
+  }, [idTest]);
 
   return (
     <C.Container>

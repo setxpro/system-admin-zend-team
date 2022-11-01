@@ -8,7 +8,6 @@ import RelatorioDeVendas from "../Pages/Tables/RelatorioDeVendas";
 import TableUsers from "../Pages/Tables/Users";
 import CreateUser from "../Pages/Tables/Users/CreateUser";
 import UpdateUser from "../Pages/Tables/Users/UpdateUser";
-import VendasDoFlex from "../Pages/Tables/VendasDoFlex";
 import Security from "../Security";
 
 export const RoutesApp = () => {
@@ -18,9 +17,7 @@ export const RoutesApp = () => {
         path="/"
         element={
           <Security>
-            <Private>
-              <VendasDoFlex />
-            </Private>
+            <Private>{/* <VendasDoFlex /> */}</Private>
           </Security>
         }
       />

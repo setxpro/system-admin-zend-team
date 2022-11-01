@@ -4,7 +4,7 @@ import { User } from "../../Types/User";
 
 type AuthContextType = {
   user: User | null;
-  signin: (email: string, password: string) => Promise<boolean>;
+  signin: (username: string, password: string) => Promise<boolean>;
   signout: () => void;
 };
 
@@ -15,8 +15,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const [user, setUser] = useState<User | null>(null);
 
-  const signin = async (email: string, password: string) => {
-    const data = await api.signin(email, password);
+  const signin = async (username: string, password: string) => {
+    const data = await api.signin(username, password);
 
     if (data.user) {
       setUser(data.user);

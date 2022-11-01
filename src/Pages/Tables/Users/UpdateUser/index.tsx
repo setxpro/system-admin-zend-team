@@ -8,7 +8,9 @@ import * as C from "./styles";
 const UpdateUser: React.FC = () => {
   const [newPicture, setNewPicture] = useState<string | ArrayBuffer | null>("");
   const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [role, setRole] = useState("Member");
   const [assignment, setAssignment] = useState("");
   const [password, setPassword] = useState("");
@@ -42,20 +44,23 @@ const UpdateUser: React.FC = () => {
     });
   };
 
-  const createUser = async (
+  const updateUser = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
 
     const { data } = await axios.patch(
-      `https://app-cpmy.herokuapp.com/user/${_id}`,
+      `${process.env.REACT_APP_URL}/user/${_id}`,
       {
         name,
+        username,
+        password,
+        phone,
         email,
         role,
         assignment,
-        avatar: newPicture,
-        password,
+        // avatar: newPicture,
+        avatar: "https://github.com/setxpro.png",
       }
     );
     toast("Usuário Atualizado com sucesso!");
@@ -66,13 +71,16 @@ const UpdateUser: React.FC = () => {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(
-        `https://app-cpmy.herokuapp.com/user/${_id}`
+        `${process.env.REACT_APP_URL}/users/${_id}`
       );
+      setUsername(data.user.username);
+      setPhone(data.user.phone);
       setName(data.user.name);
       setEmail(data.user.email);
       setAssignment(data.user.assignment);
+      setRole(data.user.role);
     })();
-  }, []);
+  }, [_id]);
 
   return (
     <C.Container>
@@ -93,10 +101,28 @@ const UpdateUser: React.FC = () => {
           <div className="input-group">
             <input
               type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="text"
               name="assignment"
               placeholder="Atribuição"
               value={assignment}
               onChange={(e) => setAssignment(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="text"
+              name="assignment"
+              placeholder="Telefone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="input-group">
@@ -142,7 +168,7 @@ const UpdateUser: React.FC = () => {
             />
             <button onClick={handleBase64}>Foto Ok!</button>
           </div>
-          <button onClick={createUser} className="send-btn">
+          <button onClick={updateUser} className="send-btn">
             ATUALIZAR
           </button>
         </form>

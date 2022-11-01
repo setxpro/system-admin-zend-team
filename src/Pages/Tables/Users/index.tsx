@@ -11,7 +11,7 @@ const TableUsers: React.FC = () => {
   const [columnOrdination, setColumnOrdination] = useState("");
 
   const getUsers = useCallback(async () => {
-    const { data } = await axios.get("https://app-cpmy.herokuapp.com/users");
+    const { data } = await axios.get(`${process.env.REACT_APP_URL}/users`);
     console.log(data);
     setUsers(data.users);
   }, []);
@@ -22,7 +22,7 @@ const TableUsers: React.FC = () => {
 
   const deleteUser = async (_id: string) => {
     const { data } = await axios.delete(
-      `https://app-cpmy.herokuapp.com/user/${_id}`
+      `${process.env.REACT_APP_URL}/user/${_id}`
     );
     let remove = users.filter((i) => i._id !== _id);
     setUsers(remove);

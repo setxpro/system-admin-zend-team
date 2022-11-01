@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const uri = axios.create({
-  baseURL: "https://app-cpmy.herokuapp.com",
+  baseURL: process.env.REACT_APP_URL,
 });
 
 export const useApi = () => ({
-  signin: async (email: string, password: string) => {
-    const { data } = await uri.post("/auth/signin", { email, password });
+  signin: async (username: string, password: string) => {
+    const { data } = await uri.post("/auth/signin", { username, password });
     return data;
   },
 });

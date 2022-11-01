@@ -8,6 +8,8 @@ import * as C from "./styles";
 const CreateUser: React.FC = () => {
   const [newPicture, setNewPicture] = useState<string | ArrayBuffer | null>("");
   const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("Member");
   const [assignment, setAssignment] = useState("");
@@ -47,14 +49,16 @@ const CreateUser: React.FC = () => {
     e.preventDefault();
 
     const { data } = await axios.post(
-      "https://app-cpmy.herokuapp.com/auth/register",
+      `${process.env.REACT_APP_URL}/auth/create`,
       {
         name,
+        username,
+        password,
+        phone,
         email,
         role,
         assignment,
         avatar: newPicture,
-        password,
       }
     );
     toast("Usuário Cadastrado com sucesso!");
@@ -81,10 +85,28 @@ const CreateUser: React.FC = () => {
           <div className="input-group">
             <input
               type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="text"
               name="assignment"
               placeholder="Atribuição"
               value={assignment}
               onChange={(e) => setAssignment(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              type="text"
+              name="assignment"
+              placeholder="Telefone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="input-group">

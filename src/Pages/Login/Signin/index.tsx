@@ -40,14 +40,14 @@ export default function SignInSide() {
   const { signin } = React.useContext(AuthContext);
   const navigate = useNavigate();
 
-  const [email, setEmail] = React.useState("");
+  const [username, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (email && password) {
-      signin(email, password);
+    if (username && password) {
+      signin(username, password);
       return navigate("/");
     }
   };
@@ -98,12 +98,12 @@ export default function SignInSide() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="text"
+                label="Username"
+                name="text"
+                autoComplete="text"
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
                 autoFocus
               />
               <TextField

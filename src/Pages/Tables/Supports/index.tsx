@@ -72,7 +72,7 @@ const Supports: React.FC = () => {
                 <td>{support.type}</td>
                 <td>{support.comment}</td>
                 <td>
-                  <Link to={`support/${support._id}`}>
+                  <Link to={`/supports/image/${support._id}`}>
                     <C.PictureIcon />
                   </Link>
                 </td>

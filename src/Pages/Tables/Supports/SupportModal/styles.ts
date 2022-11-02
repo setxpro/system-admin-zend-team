@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { BsTrash, BsCardImage } from "react-icons/bs";
-
 export const Container = styled.div`
   position: absolute;
   left: 0;

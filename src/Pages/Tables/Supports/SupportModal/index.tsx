@@ -18,7 +18,7 @@ const SupportModal = () => {
 
       setPictureSupport(data.support.screenshot);
     })();
-  }, []);
+  }, [_id]);
   return (
     <C.Container>
       <img src={pictureSupport} alt="asc" />

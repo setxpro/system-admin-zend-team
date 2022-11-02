@@ -5,8 +5,8 @@ import ModalUsers from "../Components/ModalUsers";
 import Chat from "../Pages/Chat";
 import Private from "../Pages/Private";
 import RelatorioDeVendas from "../Pages/Tables/RelatorioDeVendas";
-import Supports from "../Pages/Tables/Supports";
-import SupportModal from "../Pages/Tables/Supports/SupportModal";
+// import Supports from "../Pages/Tables/Supports";
+// import SupportModal from "../Pages/Tables/Supports/SupportModal";
 import TableUsers from "../Pages/Tables/Users";
 import CreateUser from "../Pages/Tables/Users/CreateUser";
 import UpdateUser from "../Pages/Tables/Users/UpdateUser";
@@ -15,7 +15,7 @@ import Security from "../Security";
 export const RoutesApp = () => {
   return (
     <Routes>
-      <Route
+      {/* <Route
         path="/supports"
         element={
           <Security>
@@ -34,7 +34,7 @@ export const RoutesApp = () => {
             </Private>
           </Security>
         }
-      />
+      /> */}
       <Route
         path="/relatorio-vendas"
         element={

@@ -9,4 +9,9 @@ export const useApi = () => ({
     const { data } = await uri.post("/auth/signin", { username, password });
     return data;
   },
+  
+  signout: async (_id: string) => {
+    const { data } = await uri.post('', {  _id });
+    return data;
+  },
 });

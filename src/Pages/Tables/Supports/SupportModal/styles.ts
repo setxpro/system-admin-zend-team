@@ -7,7 +7,7 @@ export const Container = styled.div`
   right: 0;
   bottom: 0;
 
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
 
   display: flex;
   align-items: center;

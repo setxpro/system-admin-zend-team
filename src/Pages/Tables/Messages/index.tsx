@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import MessageItems from "./MessageItems";
 
 import * as C from "./styles";
-import SupportItems from "./SupportItems";
 
-const Supports: React.FC = () => {
+const MessagesContact: React.FC = () => {
   const [inputFilter, setInputFilter] = useState("");
 
   return (
     <C.Container>
       <C.HeaderContent>
         <div className="btn-register">
-          <h2>Supports</h2>
+          <h2>Mensagens</h2>
         </div>
         <div></div>
         <div className="input-area">
@@ -27,17 +27,19 @@ const Supports: React.FC = () => {
         <table>
           <thead>
             <tr>
-              <th>Tipo</th>
-              <th>Comentário</th>
-              <th>Imagem</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Mensagem</th>
+              <th>+ Info</th>
               <th>Ações</th>
             </tr>
           </thead>
-          <SupportItems inputFilter={inputFilter} />
+          <MessageItems inputFilter={inputFilter} />
         </table>
       </C.Content>
     </C.Container>
   );
 };
 
-export default Supports;
+export default MessagesContact;

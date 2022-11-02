@@ -14,12 +14,36 @@ const Sidebar = () => {
       </C.Logo>
       <C.Nav>
         <ul>
-          <Link to="/relatorio-vendas">Finanças</Link>
-          <Link to="/users">Usuários</Link>
-          <Link to="/">Clientes</Link>
-          <Link to="/supports">Support</Link>
-          <Link to="/chat">Chat</Link>
+          <Link to="/">
+            <C.DashboardIcon />
+            Dashboard
+          </Link>
+          <Link to="/relatorio-vendas">
+            <C.FinanceIcon />
+            Finanças
+          </Link>
+          <Link to="/contact">
+            <C.ContactIcon />
+            Contato Site
+          </Link>
+          <Link to="/users">
+            <C.UsersIcon />
+            Usuários
+          </Link>
+          <Link to="/">
+            <C.ClientIcon />
+            Clientes
+          </Link>
+          <Link to="/supports">
+            <C.SupportIcon />
+            Support
+          </Link>
+          <Link to="/chat">
+            <C.ChatIcon />
+            Chat
+          </Link>
           <Link to="" onClick={signout}>
+            <C.LogoutIcon />
             LOGOUT
           </Link>
         </ul>

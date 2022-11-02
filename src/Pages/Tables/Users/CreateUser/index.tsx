@@ -73,50 +73,65 @@ const CreateUser: React.FC = () => {
       </C.ContentHeader>
       <C.ContenBody>
         <form>
-          <div className="input-group">
-            <input
-              type="text"
-              name="name"
-              placeholder="Nome"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+          <div className="content-one">
+            <div className="input-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Nome"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="input-group">
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
+
+          <div className="content-one">
+            <div className="input-group">
+              <input
+                type="text"
+                name="assignment"
+                placeholder="Atribuição"
+                value={assignment}
+                onChange={(e) => setAssignment(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <input
+                type="text"
+                name="assignment"
+                placeholder="Telefone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="input-group">
-            <input
-              type="text"
-              name="assignment"
-              placeholder="Atribuição"
-              value={assignment}
-              onChange={(e) => setAssignment(e.target.value)}
-            />
-          </div>
-          <div className="input-group">
-            <input
-              type="text"
-              name="assignment"
-              placeholder="Telefone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <div className="input-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="E-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+
+          <div className="content-one">
+            <div className="input-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <select onChange={(e) => setRole(e.target.value)}>
+                <option disabled>Cargo</option>
+                <option>Member</option>
+                <option>Owner</option>
+              </select>
+            </div>
           </div>
           <div className="input-group">
             <input
@@ -136,13 +151,7 @@ const CreateUser: React.FC = () => {
               onChange={(e) => setPasswordConfirm(e.target.value)}
             />
           </div>
-          <div className="input-group">
-            <select onChange={(e) => setRole(e.target.value)}>
-              <option disabled>Cargo</option>
-              <option>Member</option>
-              <option>Owner</option>
-            </select>
-          </div>
+
           <div className="input-group-file-btn">
             <input
               type="file"

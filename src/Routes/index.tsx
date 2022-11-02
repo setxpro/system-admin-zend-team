@@ -1,9 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom/dist";
 import ChatIntro from "../Components/ChatIntro";
 import ChatWindow from "../Components/ChatWindow";
 import ModalUsers from "../Components/ModalUsers";
 import Chat from "../Pages/Chat";
+import Dashboard from "../Pages/Dashboard";
 import Private from "../Pages/Private";
+import MessagesContact from "../Pages/Tables/Messages";
+import MessageModal from "../Pages/Tables/Messages/MessageModal";
 import RelatorioDeVendas from "../Pages/Tables/RelatorioDeVendas";
 import Supports from "../Pages/Tables/Supports";
 import SupportModal from "../Pages/Tables/Supports/SupportModal";
@@ -20,6 +23,16 @@ export const RoutesApp = () => {
         element={
           <Security>
             <Private>
+              <Dashboard />
+            </Private>
+          </Security>
+        }
+      />
+      <Route
+        path="/supports"
+        element={
+          <Security>
+            <Private>
               <Supports />
             </Private>
           </Security>
@@ -31,6 +44,26 @@ export const RoutesApp = () => {
           <Security>
             <Private>
               <SupportModal />
+            </Private>
+          </Security>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <Security>
+            <Private>
+              <MessagesContact />
+            </Private>
+          </Security>
+        }
+      />
+      <Route
+        path="/contact/:_id"
+        element={
+          <Security>
+            <Private>
+              <MessageModal />
             </Private>
           </Security>
         }

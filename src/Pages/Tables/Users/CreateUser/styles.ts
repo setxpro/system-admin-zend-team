@@ -31,7 +31,22 @@ export const ContenBody = styled.div`
     flex-direction: column;
     gap: 0.7rem;
 
+    .content-one {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      input[type="email"] {
+        width: 100%;
+      }
+      input[type="text"] {
+      }
+    }
+
     .input-group {
+      width: 100%;
       input {
         width: 100%;
         border: 1px solid #5555;
@@ -45,7 +60,7 @@ export const ContenBody = styled.div`
 
       select {
         outline: none;
-        padding: 0.2rem 3px;
+        padding: 0.7rem 2rem;
         background: transparent;
         color: #555;
       }

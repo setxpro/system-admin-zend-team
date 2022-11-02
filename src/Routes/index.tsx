@@ -5,6 +5,7 @@ import ModalUsers from "../Components/ModalUsers";
 import Chat from "../Pages/Chat";
 import Private from "../Pages/Private";
 import RelatorioDeVendas from "../Pages/Tables/RelatorioDeVendas";
+import Supports from "../Pages/Tables/Supports";
 import TableUsers from "../Pages/Tables/Users";
 import CreateUser from "../Pages/Tables/Users/CreateUser";
 import UpdateUser from "../Pages/Tables/Users/UpdateUser";
@@ -14,10 +15,12 @@ export const RoutesApp = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/supports"
         element={
           <Security>
-            <Private>{/* <VendasDoFlex /> */}</Private>
+            <Private>
+              <Supports />
+            </Private>
           </Security>
         }
       />

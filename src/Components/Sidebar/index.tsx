@@ -14,11 +14,10 @@ const Sidebar = () => {
       </C.Logo>
       <C.Nav>
         <ul>
-          {/* <Link to="/">Vendas do flex</Link> */}
           <Link to="/relatorio-vendas">Finanças</Link>
           <Link to="/users">Usuários</Link>
           <Link to="/">Clientes</Link>
-          <Link to="/">Support Site</Link>
+          <Link to="/supports">Support</Link>
           <Link to="/chat">Chat</Link>
           <Link to="" onClick={signout}>
             LOGOUT

@@ -59,8 +59,8 @@ const UpdateUser: React.FC = () => {
         email,
         role,
         assignment,
-        // avatar: newPicture,
-        avatar: "https://github.com/setxpro.png",
+        avatar: newPicture,
+        // avatar: "https://github.com/setxpro.png",
       }
     );
     toast("Usuário Atualizado com sucesso!");

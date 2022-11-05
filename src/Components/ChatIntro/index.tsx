@@ -6,7 +6,7 @@ const ChatIntro = () => {
   return (
     <C.Container>
       <div>
-        <h1>Field Chat</h1>
+        <h1>Zend Team Chat</h1>
       </div>
     </C.Container>
   );
